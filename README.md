@@ -54,7 +54,7 @@ bounding_boxes, landmarks = detector(img)
 print(bounding_boxes)
 
 ### Resnet backbone 
-detector  = RetinafaceDetector(net='mnet').detect_faces
+detector  = RetinafaceDetector(net='rnet').detect_faces
 img  = cv.imread('./imgs/DSC_8221.jpg')
 bounding_boxes, landmarks = detector(img)
 print(bounding_boxes)
@@ -195,7 +195,7 @@ python3 -m twine upload dist/*
 ```
 to upload your package and enter your credentials for the account you registered on the real PyPI.
 
-Apter uploading your work, you can install by
+After uploading your work, you can install by
 
 
 ```

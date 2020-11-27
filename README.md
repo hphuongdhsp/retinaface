@@ -13,7 +13,7 @@ This package is built on top of the [Retinaface](https://github.com/biubug6/Pyto
 
 - [Usage](#Usage)
 
-- [How to make a python package](#How to make a python package)
+- [How to make a python package](#how-to-make-a-python-package)
 
 
 

@@ -1,0 +1,148 @@
+Metadata-Version: 2.1
+Name: Pytorch-detection
+Version: 0.0.1
+Summary: A small example package for face recognition
+Home-page: https://github.com/hphuongdhsp/retinaface
+Author: Hoang Phuong
+Author-email: hphuongdhsp@gmail.com
+License: MIT
+Description: # Retinaface
+        
+        A simple package of face detection
+        
+        This package is built on top of the [Retinaface](https://github.com/biubug6/Pytorch_Retinaface)
+        
+        
+        
+        
+        - [More about Retinaface](#more-about-Retinaface)
+        
+        - [Installation](#installation)
+        
+        - [Usage](#Usage)
+        
+        - [How to do a python package ](#How to do a python package)
+        
+        
+        
+        ## More about Retinaface
+        
+        Retinaface is the State-of-the-art for Face Detection on WIDER Face. There are two versions of retinaface: MobileNet Backend and Resnet Backend. The model using MobileNet as backbone has only 1.7M, the other model with Resnet backbone has ~30m. Here is the performance on the FDDB dataset: 
+        
+        | FDDB(pytorch) | performance |
+        |:-|:-:|
+        | Mobilenet0.25 | 98.64% |
+        | Resnet50 | 99.22% |
+        
+        <p align="center"><img src="./imgs/FDDB.png" width="640"\></p>
+        
+        ----
+        
+        ## Installation
+        
+        ```
+        $ pip install pytorch-detection
+        
+        ```
+        
+        ----
+        
+        ## Usage
+        
+        ```python
+        
+        from retinaface import RetinafaceDetector
+        import cv2 as cv
+        
+        
+        ### Mobinet backbone 
+        detector  = RetinafaceDetector(net='mnet').detect_faces
+        img  = cv.imread('./imgs/DSC_8221.jpg')
+        bounding_boxes, landmarks = detector(img)
+        print(bounding_boxes)
+        
+        ### Resnet backbone 
+        detector  = RetinafaceDetector(net='mnet').detect_faces
+        img  = cv.imread('./imgs/DSC_8221.jpg')
+        bounding_boxes, landmarks = detector(img)
+        print(bounding_boxes)
+        
+        ```
+        
+        #### Result 
+        
+        <p align="center"><img src="./imgs/detect_DSC_8221.jpg" width="150"\></p>
+        
+        ## How to make a python package 
+        
+        To create this project locally, create the following file structure:
+        
+        
+        ```Shell
+        retinaface
+            ├── retinaface
+            │      ├── __init__.py
+            ├── LICENSE
+            ├── README.md
+            ├── setup.py
+            ├── setup.py
+            ├── requirements.txt
+        
+        ```
+        
+        #### Creating setup.py
+        
+        setup.py is the build script for setuptools. It tells setuptools about your package
+        
+        ```python
+        
+        import setuptools
+        
+        setuptools.setup(
+            name="Pytorch-detection", # Replace with your own username
+            version="0.0.1",
+            author="Hoang Phuong",
+            author_email="hphuongdhsp@gmail.com",
+            license='MIT',
+            description = "A simple example package for face detection",
+            long_description = long_description,
+            long_description_content_type="text/markdown",
+            url="https://github.com/hphuongdhsp/retinaface",
+            packages=setuptools.find_packages(),
+            classifiers=[
+                "Programming Language :: Python :: 3",
+                "License :: OSI Approved :: MIT License",
+                "Operating System :: OS Independent",
+            ],
+            keywords='face detection, retinaface',
+            install_requires=open('requirements.txt').readlines(),
+            python_requires='>=3.6',
+        )
+        
+        ```
+        #### Creating README.md
+        
+        #### Creating a LICENSE
+        
+        #### Generating distribution archives
+        
+        Install **setuptools** and **wheel**
+        
+        ```
+        $ pip install --user --upgrade setuptools wheel
+        
+        ```
+        make distribution files:
+        
+        ```
+        python3 setup.py sdist bdist_wheel
+        ```
+        
+        That command genetate two files in the **dist** directory:  
+Keywords: face detection,retinaface
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

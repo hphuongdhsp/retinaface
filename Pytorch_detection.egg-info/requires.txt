@@ -1,5 +1,0 @@
-albumentations
-numpy
-pillow
-torch
-torchvision

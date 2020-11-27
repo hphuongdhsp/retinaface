@@ -13,7 +13,7 @@ This package is built on top of the [Retinaface](https://github.com/biubug6/Pyto
 
 - [Usage](#Usage)
 
-- [How to do a python package ](#How to do a python package)
+- [How to make a python package](#How to make a python package)
 
 
 
@@ -61,7 +61,7 @@ print(bounding_boxes)
 
 ```
 
-#### Result 
+**Result** 
 
 <p align="center"><img src="./imgs/detect_DSC_8221.jpg" width="150"\></p>
 
